@@ -320,14 +320,8 @@
         </div>
       </div>
     </div>
-    <div class="hidden md:flex w-full justify-center pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-      <div class="rounded-full border-8 border-primary shadow-xl">
-        <img
-          src="/assets/img/blog-author.jpg"
-          class="h-48 w-48 rounded-full"
-          alt="author"
-        />
-      </div>
+    <div class="flex w-full justify-center pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+      <iframe class="w-full h-56" src="https://www.youtube.com/embed/EF3phwI-5DY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -347,48 +341,49 @@
   <div
     class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
   >
-    <div class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
-        <div>
-            <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 1</h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                <ul class="list-disc px-4 group-hover:text-white">
-                    <li>500-800 Tamu Undangan</li>
-                    <li>4 Crew Profesional</li>
-                    <li>Unlimited Consultation</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-            </p>
-        </div>
-    </div>
-    <div class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
-        <div>
-            <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 2</h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                <ul class="list-disc px-4 group-hover:text-white">
-                    <li>500-800 Tamu Undangan</li>
-                    <li>4 Crew Profesional</li>
-                    <li>Unlimited Consultation</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-            </p>
-        </div>
-    </div>
-    <div class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
-        <div>
-            <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 3</h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                <ul class="list-disc px-4 group-hover:text-white">
-                    <li>500-800 Tamu Undangan</li>
-                    <li>4 Crew Profesional</li>
-                    <li>Unlimited Consultation</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-            </p>
-        </div>
-    </div>
+    <a href="/paket/1" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
+      <div>
+        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 1</h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          <ul class="list-disc px-4 group-hover:text-white">
+            <li>500-800 Tamu Undangan</li>
+            <li>4 Crew Profesional</li>
+            <li>Unlimited Consultation</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+          </ul>
+        </p>
+      </div>
+    </a>
+    <a href="/paket/2" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
+      <div>
+        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 2</h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          <ul class="list-disc px-4 group-hover:text-white">
+            <li>500-800 Tamu Undangan</li>
+            <li>4 Crew Profesional</li>
+            <li>Unlimited Consultation</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+          </ul>
+        </p>
+      </div>
+    </a>
+    <a href="/paket/3" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
+      <div>
+        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 3</h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          <ul class="list-disc px-4 group-hover:text-white">
+            <li>500-800 Tamu Undangan</li>
+            <li>4 Crew Profesional</li>
+            <li>Unlimited Consultation</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+          </ul>
+        </p>
+      </div>
+    </a>
+    
   </div>
 </div>
 
@@ -406,48 +401,48 @@
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
     <div class="grid gap-4">
-      <div>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-      </div>
+      </a>
     </div>
     <div class="grid gap-4">
-      <div>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-      </div>
+      </a>
     </div>
     <div class="grid gap-4">
-      <div>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-      </div>
+      </a>
     </div>
     <div class="grid gap-4">
-      <div>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-      </div>
-      <div>
+      </a>
+      <a href="/galeri/1">
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -465,100 +460,91 @@
       Lorem ipsum dolor sit amet
     </h4>
     <div class="swiper mySwiper pt-8">
-        <div class="swiper-wrapper w-max">
-            <div class="swiper-slide">
-                <div
-                    class="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
-                    <p
-                        class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                        Pagedone has made it possible for me to stay on top of my portfolio and make
-                        informed
-                        decisions
-                        quickly and easily.
-                    </p>
-                    <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                        <div class="block">
-                            <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Jane D</h5>
-                            <span class="text-sm leading-4 text-gray-500">CEO </span>
-                        </div>
-                    </div>
-                </div>
+      <div class="swiper-wrapper w-max">
+        <a href="/testimoni/2" class="swiper-slide">
+          <div class="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
+            <p
+              class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
+              Pagedone has made it possible for me to stay on top of my portfolio and make
+              informed
+              decisions
+              quickly and easily.
+            </p>
+            <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
+              <div class="block">
+                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Jane D</h5>
+                <span class="text-sm leading-4 text-gray-500">CEO </span>
+              </div>
             </div>
-            <div class="swiper-slide">
-                <div
-                    class="group bg-white border border-solid border-gray-300 flex justify-between flex-col rounded-xl p-6 transition-all duration-500  w-full mx-auto hover:border-indigo-600 slide_active:border-indigo-600 hover:shadow-sm">
-                    <p
-                        class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                        Thanks to pagedone, I feel more informed and confident about my investment decisions
-                        than
-                        ever
-                        before.
-                    </p>
-                    <div class="flex items-center gap-5 pt-5 border-t border-solid border-gray-200">
-                        <div class="block">
-                            <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Harsh P.
-                            </h5>
-                            <span class="text-sm leading-4 text-gray-500">Product Designer</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+        <a href="/testimoni/2" class="swiper-slide">
+          <div class="group bg-white border border-solid border-gray-300 flex justify-between flex-col rounded-xl p-6 transition-all duration-500  w-full mx-auto hover:border-indigo-600 slide_active:border-indigo-600 hover:shadow-sm">
+            <p class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
+              Thanks to pagedone, I feel more informed and confident about my investment decisions
+              than
+              ever
+              before.
+            </p>
+            <div class="flex items-center gap-5 pt-5 border-t border-solid border-gray-200">
+              <div class="block">
+                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Harsh P.
+                </h5>
+                <span class="text-sm leading-4 text-gray-500">Product Designer</span>
+              </div>
             </div>
-            <div class="swiper-slide">
-                <div
-                    class=" flex justify-between flex-col lg:w-full group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm">
-                    <p
-                        class="text-base text-gray-600 leading-6  transition-all duration-500  pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                        The customer service team at pagedone went above and beyond to help me resolve a
-                        billing
-                        issue.
-                    </p>
-                    <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                        <div class="block">
-                            <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Alex K.</h5>
-                            <span class="text-sm leading-4 text-gray-500">Design Lead</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+        <a href="/testimoni/2" class="swiper-slide">
+          <div class=" flex justify-between flex-col lg:w-full group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm">
+            <p class="text-base text-gray-600 leading-6  transition-all duration-500  pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
+              The customer service team at pagedone went above and beyond to help me resolve a
+              billing
+              issue.
+            </p>
+            <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
+              <div class="block">
+                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Alex K.</h5>
+                <span class="text-sm leading-4 text-gray-500">Design Lead</span>
+              </div>
             </div>
-            <div class="swiper-slide">
-                <div
-                    class="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm">
-                    <p
-                        class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                        Pagedone has made it possible for me to stay on top of my portfolio and make
-                        informed
-                        decisions
-                        quickly and easily.
-                    </p>
-                    <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                        <div class="block">
-                            <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Jane D</h5>
-                            <span class="text-sm leading-4 text-gray-500">CEO </span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+        <a href="/testimoni/2" class="swiper-slide">
+          <div class="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm">
+            <p class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
+              Pagedone has made it possible for me to stay on top of my portfolio and make
+              informed
+              decisions
+              quickly and easily.
+            </p>
+            <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
+              <div class="block">
+                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Jane D</h5>
+                <span class="text-sm leading-4 text-gray-500">CEO </span>
+              </div>
             </div>
-            <div class="swiper-slide">
-                <div
-                    class="group bg-white border border-solid border-gray-300 flex justify-between flex-col rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm ">
-                    <p
-                        class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                        Thanks to pagedone, I feel more informed and confident about my investment decisions
-                        than
-                        ever
-                        before.
-                    </p>
-                    <div class="flex items-center gap-5 pt-5 border-t border-solid border-gray-200">
-                        <div class="block">
-                            <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Harsh P.
-                            </h5>
-                            <span class="text-sm leading-4 text-gray-500">Product Designer</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+        <a href="/testimoni/2" class="swiper-slide">
+          <div class="group bg-white border border-solid border-gray-300 flex justify-between flex-col rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm ">
+            <p class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
+              Thanks to pagedone, I feel more informed and confident about my investment decisions
+              than
+              ever
+              before.
+            </p>
+            <div class="flex items-center gap-5 pt-5 border-t border-solid border-gray-200">
+              <div class="block">
+                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Harsh P.
+                </h5>
+                <span class="text-sm leading-4 text-gray-500">Product Designer</span>
+              </div>
             </div>
-        </div>
-        <div class="swiper-pagination"></div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
