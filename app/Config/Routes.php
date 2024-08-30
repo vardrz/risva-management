@@ -14,6 +14,9 @@ $routes->get('/testimoni/(:any)?', 'Home::testimoni/$1');
 // Admin
 $routes->get('/admin/home', 'Admin::index');
 
+// Admin Profil
+$routes->get('/admin/profile', 'ProfileController::index');
+
 // Admin Paket
 $routes->get('/admin/paket', 'PaketController::index');
 $routes->post('/admin/paket/save', 'PaketController::save');
