@@ -17,7 +17,24 @@
 
     <div class="container mt-4 grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="card-body relative overflow-x-auto shadow-md border">
-            <form action="<?= base_url('admin/profile/update'); ?>" method="post">
+            <?php if (session()->getFlashdata('pesan')) : ?>
+                <div role="alert" class="alert alert-success relative flex items-center mb-3">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><?= session()->getFlashdata('pesan'); ?></span>
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 inset-y-0 my-auto" onclick="this.parentElement.style.display='none';">✕</button>
+                </div>
+            <?php endif; ?>
+            <form action="<?= base_url('admin/profile/save'); ?>" method="post">
                 <div class="mb-5">
                     <label for="deskripsi">Deskripsi Profil</label>
                     <textarea rows="7" name="deskripsi" id="deskripsi" class="block px-2.5 pb-2.5 pt-4 mt-2 w-full resize-y text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['deskripsi']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>"><?= $data['deskripsi']; ?></textarea>
@@ -103,14 +120,40 @@
             <span class="font-semibold text-xl mb-5 text-center">Logo</span>
             <div class="flex flex-col items-center">
                 <img class="w-24" src="<?= base_url('uploaded/') . $data['logo'] ?>" alt="Logo">
-                <form method="post" action="<?= base_url('admin/profile/update'); ?>" class="flex flex-col mt-10">
+                <form method="post" action="<?= base_url('admin/profile/logo'); ?>" enctype="multipart/form-data" class="flex flex-col mt-10">
                     <div>
                         <span class="mb-2 pr-5">Ubah Logo</span>
                         <input type="file" name="logo"/>
+                        <?php if (isset(session()->get('validator')['logo'])) : ?>
+                            <div class="text-red-500 text-xs w-full h-fit flex flex-row mt-1">
+                                <span><?= session()->get('validator')['logo']; ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-4 w-4 ml-auto" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <button type="submit" class="p-2 bg-indigo-800 text-white rounded-md mt-5">Simpan</button>
                 </form>
             </div>
+
+            <?php if (session()->getFlashdata('logo')) : ?>
+                <div role="alert" class="alert alert-success relative flex items-center mt-3">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><?= session()->getFlashdata('logo'); ?></span>
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 inset-y-0 my-auto" onclick="this.parentElement.style.display='none';">✕</button>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>

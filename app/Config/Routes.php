@@ -16,6 +16,8 @@ $routes->get('/admin/home', 'Admin::index');
 
 // Admin Profil
 $routes->get('/admin/profile', 'ProfileController::index');
+$routes->post('/admin/profile/save', 'ProfileController::save');
+$routes->post('/admin/profile/logo', 'ProfileController::logo');
 
 // Admin Paket
 $routes->get('/admin/paket', 'PaketController::index');
