@@ -8,12 +8,12 @@ class PaketModel extends Model
 {
     protected $table            = 'paket';
     protected $primaryKey       = 'id_paket';
-    protected $allowedFields    = ['nama_paket', 'harga'];
+    protected $allowedFields    = ['nama_paket', 'deskripsi', 'harga'];
 
     public function AmbilItem()
     {
         $builder = $this->db->table('paket');
-        $builder->select('paket.id_paket, paket.nama_paket, paket.harga, item_paket.item');
+        $builder->select('paket.id_paket, paket.nama_paket, paket.deskripsi, paket.harga, item_paket.item');
         $builder->join('item_paket', 'item_paket.id_paket = paket.id_paket');
         return $builder->get()->getResultArray();
     }

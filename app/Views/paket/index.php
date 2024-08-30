@@ -88,6 +88,9 @@
                             Nama Paket
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Deskripsi
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Item
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -107,6 +110,9 @@
                             <th scope="row" class="text-center px-6 py-4 font-medium whitespace-nowrap">
                                 <?= $value['nama_paket']; ?><br>
                                 <button onclick="item_tambah_<?= $value['id_paket']; ?>.showModal()" class="btn btn-xs btn-info text-white">Tambah Item</button>
+                            </th>
+                            <th scope="row" class="px-6 py-4 font-medium text-warp">
+                                <?= $value['deskripsi']; ?><br>
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                                 <?php foreach ($item as $key) : ?>

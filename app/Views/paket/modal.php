@@ -22,6 +22,20 @@
             </div>
             <div class="mb-3">
                 <div class="relative">
+                    <textarea name="deskripsi" id="deskripsi" placeholder="<?= old('deskripsi'); ?>" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['deskripsi']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>"></textarea>
+                    <label for="deskripsi" class="absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white mx-2 px-2 peer-focus:bg-white peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 <?= isset(session()->get('validator')['deskripsi']) ? 'text-red-500' : 'text-gray-500'; ?>">Deskripsi</label>
+                    <?php if (isset(session()->get('validator')['deskripsi'])) : ?>
+                        <div class="text-red-500 text-xs w-full h-fit flex flex-row mt-1">
+                            <span><?= session()->get('validator')['deskripsi']; ?></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-4 w-4 ml-auto" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="relative">
                     <input type="number" name="harga" id="harga" placeholder="<?= old('harga'); ?>" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['harga']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>">
                     <label for="harga" class="absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white mx-2 px-2 peer-focus:bg-white peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 <?= isset(session()->get('validator')['harga']) ? 'text-red-500' : 'text-gray-500'; ?>">Harga</label>
                 </div>
