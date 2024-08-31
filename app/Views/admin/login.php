@@ -26,8 +26,8 @@
 
 <body class="antialiased font-sans">
     <div class="font-sans">
-        <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-emerald-600 ">
-            <div class="relative sm:max-w-sm w-full">
+        <div class="relative min-h-screen flex flex-col justify-center items-center bg-indigo-800 ">
+            <div class="relative max-w-sm w-full">
                 <div class="card bg-blue-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
                 <div class="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
                 <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">

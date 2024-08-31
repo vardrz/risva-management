@@ -119,11 +119,11 @@
 
             <span class="font-semibold text-xl mb-5 text-center">Logo</span>
             <div class="flex flex-col items-center">
-                <img class="w-24" src="<?= base_url('uploaded/') . $data['logo'] ?>" alt="Logo">
+                <img class="w-24" src="<?= base_url('uploaded/') . $data['logo'] ?>" alt="Logo" id="output"/>
                 <form method="post" action="<?= base_url('admin/profile/logo'); ?>" enctype="multipart/form-data" class="w-full flex flex-col mt-10">
                     <div>
                         <span class="mb-2 pr-5">Ubah Logo</span>
-                        <input type="file" name="logo"/>
+                        <input type="file" name="logo" onchange="loadFile(event)"/>
                         <?php if (isset(session()->get('validator')['logo'])) : ?>
                             <div class="text-red-500 text-xs w-full h-fit flex flex-row mt-1">
                                 <span><?= session()->get('validator')['logo']; ?></span>
@@ -158,4 +158,17 @@
     </div>
 </div>
 
+<?= $this->endSection() ?>
+
+
+<?= $this->section('script') ?>
+<script>
+    var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+        }
+    };
+</script>
 <?= $this->endSection() ?>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-    <title>Paket AA - Risva Management</title>
+    <title><?= $paket['nama_paket'] ?> - Risva Management</title>
     <!-- <link rel="canonical" href="//" /> -->
 
     <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
@@ -213,12 +213,14 @@
 
       <div><div class="container py-6 md:py-10">
   <div class="mx-auto max-w-4xl">
-    <div class="">
-      <h1
-        class="pt-5 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl xl:text-6xl"
+    <div class="flex flex-col py-5">
+      <span class="font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl"
       >
-        Paket AAAA
-      </h1>
+        <?= $paket['nama_paket'] ?>
+      </span>
+      <span class="text-lg font-bold pt-3">
+        <?= 'Rp ' . number_format($paket['harga'], 0, ".", ","); ?>
+      </span>
     </div>
     <div class="prose max-w-none pt-8">
       <h2 id="lorem-ipsum-dolor-sit-amet">Deskripsi</h2>
@@ -242,7 +244,7 @@
 </div>
 </div>
 
-      <div class="bg-primary">
+      <div class="bg-primary mt-10">
   <div class="container flex flex-col justify-between py-6 sm:flex-row">
     <p class="text-center font-body text-white md:text-left">
       © Copyright <?= date('Y') ?>. All right reserved, Risva Management.

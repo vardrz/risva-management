@@ -333,7 +333,10 @@
     <?php foreach($paket as $p): ?>
     <a href="/paket/<?= $p['id_paket'] ?>" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
       <div>
-        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl"><?= $p['nama_paket'] ?></h3>
+        <h3 class="text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl"><?= $p['nama_paket'] ?></h3>
+        <h3 class="py-3 text-center font-semibold uppercase text-primary group-hover:text-yellow lg:text-2xl">
+        <?= 'Rp ' . number_format($p['harga'], 0, ".", ","); ?>
+        </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
           <ul class="list-disc px-4 group-hover:text-white">
             <?php foreach($item as $i): ?>

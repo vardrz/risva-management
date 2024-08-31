@@ -69,7 +69,7 @@
 <?= $this->endSection() ?>
 
 
-<?= $this->section('content') ?>
+<?= $this->section('script') ?>
 <script>
     var loadFile = function(event) {
         var output = document.getElementById('output');

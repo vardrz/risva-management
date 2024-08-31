@@ -115,7 +115,7 @@
                                     <img class="w-8 h-8 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWQQdRQ1JIuiKNvTqBukJH4WugmOWF7A_-w&s" alt="Foto Profil">
                                 </button>
                             </div>
-                            <ul tabindex="0" class="dropdown-content menu bg-emerald-700 rounded-box z-[1] w-52 p-2 shadow">
+                            <ul tabindex="0" class="dropdown-content menu bg-indigo-800 rounded-box z-[1] w-52 p-2 shadow">
                                 <li><a href="<?= base_url('admin/logout'); ?>">Logout</a></li>
                             </ul>
                         </div>
