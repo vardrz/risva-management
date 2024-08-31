@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\GaleriModel;
 use App\Models\ItemPaketModel;
 use App\Models\PaketModel;
 use App\Models\ProfileModel;
@@ -12,12 +13,14 @@ class Home extends BaseController
     protected $profileModel;
     protected $testiModel;
     protected $paketModel;
+    protected $galeriModel;
     protected $itemPaketModel;
 
     public function __construct()
     {
         $this->profileModel = new ProfileModel();
         $this->testiModel = new TestiModel();
+        $this->galeriModel = new GaleriModel();
         $this->paketModel = new PaketModel();
         $this->itemPaketModel = new ItemPaketModel();
     }
@@ -26,6 +29,7 @@ class Home extends BaseController
     {
         $profil = $this->profileModel->get()[0];
         $testi = $this->testiModel->get();
+        $galeri = $this->galeriModel->findAll();
         $paket = $this->paketModel->findAll();
         $item = $this->itemPaketModel->findAll();
 
@@ -34,6 +38,7 @@ class Home extends BaseController
             "testi" => $testi,
             "paket" => $paket,
             "item" => $item,
+            "galeri" => $galeri,
         ]);
     }
 
@@ -50,8 +55,12 @@ class Home extends BaseController
     }
 
     public function galeri($id){
+        $profil = $this->profileModel->get()[0];
+        $galeri = $this->galeriModel->find($id);
+
         return view('galeri', [
-            "id" => $id
+            "profil" => $profil,
+            "galeri" => $galeri,
         ]);
     }
 

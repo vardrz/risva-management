@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-    <title>AAA - Risva Management</title>
+    <title><?= $galeri['judul'] ?> - Risva Management</title>
     <!-- <link rel="canonical" href="//" /> -->
 
     <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
@@ -69,7 +69,7 @@
   <div class="container flex items-center justify-between">
     <div>
       <a href="/">
-        <h3 class="text-white">LOGO</h3>
+        <img src="<?= base_url('uploaded/') . $profil['logo']; ?>" class="w-24">
       </a>
     </div>
     <div class="hidden lg:block">
@@ -217,15 +217,15 @@
       <h1
         class="pt-5 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl xl:text-6xl"
       >
-        AAAA
+        <?= $galeri['judul'] ?>
       </h1>
     </div>
     <div class="prose max-w-none pt-8">
 
-      <img src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+      <img src="<?= base_url('img/') . $galeri['foto'] ?>" alt="">
 
       <h2 id="lorem-ipsum-dolor-sit-amet">Deskripsi</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p><?= $galeri['deskripsi'] ?></p>
     </div>
     <a href="/#galeri" class="flex items-center mt-8">
       <i class="bx bx-left-arrow-alt text-2xl text-primary"></i>
@@ -241,24 +241,13 @@
       <div class="bg-primary">
   <div class="container flex flex-col justify-between py-6 sm:flex-row">
     <p class="text-center font-body text-white md:text-left">
-      © Copyright 2022. All right reserved, Risva Management.
+      © Copyright <?= date('Y') ?>. All right reserved, Risva Management.
     </p>
     <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-      <a href="/">
-        <i
-          class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"
-        ></i>
+      <a href="https://wa.me/<?= $profil['whatsapp']; ?>" class="pl-4">
+        <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
       </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
+      <a href="https://instagram.com/<?= str_replace("@", "", $profil['instagram']); ?>" class="pl-4">
         <i class="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
       </a>
     </div>

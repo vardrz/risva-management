@@ -99,9 +99,11 @@
                             <ul class="menu bg-indigo-800 text-white min-h-full w-64 p-4">
                                 <!-- Sidebar content here -->
                                 <span class="text-3xl font-bold mt-3 mb-5 ml-4">Admin</span>
-                                <li><a>Dashboard</a></li>
-                                <li><a>Menu 1</a></li>
-                                <li><a>Menu 2</a></li>
+                                <li><a href="/admin/home">Dashboard</a></li>
+                                <li><a href="/admin/profile">Profil</a></li>
+                                <li><a href="/admin/paket">Paket</a></li>
+                                <li><a href="/admin/galeri">Galeri</a></li>
+                                <li><a href="/admin/testi">Testimoni</a></li>
                             </ul>
                         </div>
                     </div>
@@ -121,7 +123,7 @@
                 </div>
 
             </header>
-            <div class="w-full p-5">
+            <div class="w-full p-2 md:p-5">
                 <?= $this->renderSection('content') ?>
             </div>
         </section>

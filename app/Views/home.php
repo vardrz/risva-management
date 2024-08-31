@@ -356,57 +356,13 @@
   >
     Galeri
   </h2>
-  <h3
-    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
-  >
-    Lorem ipsum dolor sit amet
-  </h3>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-    <div class="grid gap-4">
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-      </a>
-    </div>
-    <div class="grid gap-4">
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-      </a>
-    </div>
-    <div class="grid gap-4">
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-      </a>
-    </div>
-    <div class="grid gap-4">
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-      </a>
-      <a href="/galeri/1">
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-      </a>
-    </div>
+    <?php foreach($galeri as $g): ?>
+    <a href="/galeri/<?= $g['id_galeri'] ?>">
+      <img class="h-44 w-full object-cover rounded-lg" src="<?= base_url('img/') . $g['foto'] ?>">
+    </a>
+    <?php endforeach; ?>
   </div>
 </div>
 

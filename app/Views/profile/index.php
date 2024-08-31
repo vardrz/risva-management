@@ -120,7 +120,7 @@
             <span class="font-semibold text-xl mb-5 text-center">Logo</span>
             <div class="flex flex-col items-center">
                 <img class="w-24" src="<?= base_url('uploaded/') . $data['logo'] ?>" alt="Logo">
-                <form method="post" action="<?= base_url('admin/profile/logo'); ?>" enctype="multipart/form-data" class="flex flex-col mt-10">
+                <form method="post" action="<?= base_url('admin/profile/logo'); ?>" enctype="multipart/form-data" class="w-full flex flex-col mt-10">
                     <div>
                         <span class="mb-2 pr-5">Ubah Logo</span>
                         <input type="file" name="logo"/>
