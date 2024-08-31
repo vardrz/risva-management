@@ -5,7 +5,7 @@
             <form method="dialog">
                 <button type="submit" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>
-            <h3 class="text-lg font-bold mb-3 text-center">Form Tambah Item</h3>
+            <h3 class="text-lg font-bold mb-3 text-center">Form Tambah Item <?= $value['nama_paket']; ?></h3>
             <form action="<?= base_url('admin/item_paket/save'); ?>" method="post">
                 <div class="mb-3">
                     <div class="relative">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="mb-3">
                     <div class="relative">
-                        <input readonly type="number" name="id_paket" id="id_paket" value="<?= $value['id_paket']; ?>" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['id_paket']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>">
+                        <input readonly type="text" name="id_paket" id="id_paket" value="<?= $value['nama_paket']; ?>" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['id_paket']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>">
                         <label for="id_paket" class="absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white mx-2 px-2 peer-focus:bg-white peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 <?= isset(session()->get('validator')['id_paket']) ? 'text-red-500' : 'text-gray-500'; ?>">id_paket</label>
                     </div>
                     <?php if (isset(session()->get('validator')['id_paket'])) : ?>
@@ -43,7 +43,7 @@
     </dialog>
     <!-- End Modal Tambah  -->
 <?php endforeach; ?>
-<?php foreach ($item as $key => $value) : ?>
+<?php foreach ($relasi as $key => $value) : ?>
     <!-- Modal Edit -->
     <dialog id="item_edit_<?= $value['id_item']; ?>" class="modal">
         <div class="modal-box max-w-md">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="mb-3">
                     <div class="relative">
-                        <input readonly type="number" name="edit_id_paket" id="edit_id_paket" value="<?= $value['id_paket']; ?>" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['edit_id_paket']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>">
+                        <input readonly type="text" name="edit_id_paket" id="edit_id_paket" value="<?= $value['nama_paket']; ?>" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-sm border appearance-none peer <?= isset(session()->get('validator')['edit_id_paket']) ? 'border-red-500' : 'border-[#B7B7B7]'; ?>">
                         <label for="edit_id_paket" class="absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white mx-2 px-2 peer-focus:bg-white peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 <?= isset(session()->get('validator')['edit_id_paket']) ? 'text-red-500' : 'text-gray-500'; ?>">edit_id_paket</label>
                     </div>
                     <?php if (isset(session()->get('validator')['edit_id_paket'])) : ?>

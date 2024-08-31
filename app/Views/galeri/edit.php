@@ -4,14 +4,14 @@
 
 <div class="w-full px-4 py-6">
     <div class="flex justify-between pb-4">
-        <h1 class="font-bold text-3xl">Form Tambah Galeri</h1>
+        <h1 class="font-bold text-3xl">Form Edit Galeri</h1>
         <div class="text-sm self-end">
             <ul class="flex">
                 <li class="text-gray-600"><a href="<?= base_url('admin/home'); ?>" class="hover:font-semibold">Dashboard</a></li>
                 <li><span class="mx-2 text-gray-400">/</span></li>
                 <li class="text-gray-600"><a href="<?= base_url('admin/galeri'); ?>" class="hover:font-semibold">Galeri</a></li>
                 <li><span class="mx-2 text-gray-400">/</span></li>
-                <li class="font-medium"><span>Tambah</span></li>
+                <li class="font-medium"><span>Edit</span></li>
             </ul>
         </div>
     </div>
@@ -27,13 +27,13 @@
     <?php endif; ?>
 
     <div class="container mt-6">
-        <form action="<?= base_url('admin/galeri/save'); ?>" method="post" enctype="multipart/form-data" class="bg-white shadow-lg rounded-lg p-6 border">
+        <form action="<?= base_url('admin/galeri/update/' . $value['id_galeri']); ?>" method="post" enctype="multipart/form-data" class="bg-white shadow-lg rounded-lg p-6 border">
             <?= csrf_field(); ?>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <div class="mb-4">
                         <label for="judul" class="block text-sm font-medium text-gray-700">Judul Galeri</label>
-                        <input type="text" name="judul" id="judul" class="input input-bordered w-full <?= isset(session()->get('validator')['judul']) ? 'border-red-500' : 'border-gray-300'; ?>" value="<?= old('judul'); ?>">
+                        <input type="text" name="judul" value="<?= $value['judul']; ?>" id="judul" class="input input-bordered w-full <?= isset(session()->get('validator')['judul']) ? 'border-red-500' : 'border-gray-300'; ?>">
                         <?php if (isset(session()->get('validator')['judul'])) : ?>
                             <span class="text-red-500 text-sm mt-1"><?= session()->get('validator')['judul']; ?></span>
                         <?php endif; ?>
@@ -41,7 +41,7 @@
 
                     <div class="mb-4">
                         <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                        <textarea name="deskripsi" id="deskripsi" class="textarea textarea-bordered w-full <?= isset(session()->get('validator')['deskripsi']) ? 'border-red-500' : 'border-gray-300'; ?>"><?= old('deskripsi'); ?></textarea>
+                        <textarea name="deskripsi" id="deskripsi" class="textarea textarea-bordered w-full <?= isset(session()->get('validator')['deskripsi']) ? 'border-red-500' : 'border-gray-300'; ?>"><?= $value['deskripsi']; ?></textarea>
                         <?php if (isset(session()->get('validator')['deskripsi'])) : ?>
                             <span class="text-red-500 text-sm mt-1"><?= session()->get('validator')['deskripsi']; ?></span>
                         <?php endif; ?>
@@ -53,7 +53,9 @@
                         <?php if (isset(session()->get('validator')['gambar'])) : ?>
                             <span class="text-red-500 text-sm mt-1"><?= session()->get('validator')['gambar']; ?></span>
                         <?php endif; ?>
+                        <p class="mt-2 text-sm text-gray-500">Current Image: <?= $value['foto']; ?></p>
                     </div>
+                    <input type="hidden" name="gambarLama" id="gambarLama" value="<?= $value['foto']; ?>">
                     <div class="flex justify-end">
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         <a href="<?= base_url('admin/galeri'); ?>" class="btn btn-secondary ml-2">Batal</a>
@@ -61,7 +63,7 @@
                 </div>
                 <!-- Preview Gambar -->
                 <div class="mb-4 flex justify-center items-center">
-                    <img id="image-preview" class="w-full object-scale-down max-h-96 rounded-lg" style="display: none;" />
+                    <img id="image-preview" src="<?= base_url('img/' . $value['foto']); ?>" class="w-full object-scale-down max-h-96 rounded-lg" />
                 </div>
             </div>
         </form>

@@ -21,9 +21,10 @@ class PaketController extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Paket',
-            'paket' => $this->paketModel->findAll(),
-            'item'  => $this->itemPaketModel->findAll()
+            'title'     => 'Paket',
+            'paket'     => $this->paketModel->findAll(),
+            'item'      => $this->itemPaketModel->findAll(),
+            'relasi'    => $this->paketModel->AmbilItem()
         ];
 
         return view('paket/index', $data);
@@ -39,6 +40,12 @@ class PaketController extends BaseController
                     'is_unique' => 'Nama Paket sudah ada.'
                 ]
             ],
+            'deskripsi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Deskripsi harus diisi.'
+                ]
+            ],
             'harga' => [
                 'rules' => 'required',
                 'errors' => [
@@ -52,6 +59,7 @@ class PaketController extends BaseController
 
         $this->paketModel->insert([
             'nama_paket' => $this->request->getPost('nama_paket'),
+            'deskripsi'  => $this->request->getPost('deskripsi'),
             'harga'      => $this->request->getPost('harga')
         ]);
 
@@ -69,6 +77,12 @@ class PaketController extends BaseController
                     'is_unique' => 'Nama Paket sudah ada.'
                 ]
             ],
+            'edit_deskripsi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Deskripsi harus diisi.'
+                ]
+            ],
             'edit_harga' => [
                 'rules' => 'required',
                 'errors' => [
@@ -82,6 +96,7 @@ class PaketController extends BaseController
 
         $this->paketModel->update($id, [
             'nama_paket' => $this->request->getPost('edit_nama_paket'),
+            'deskripsi'  => $this->request->getPost('edit_deskripsi'),
             'harga'      => $this->request->getPost('edit_harga')
         ]);
 

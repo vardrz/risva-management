@@ -13,6 +13,9 @@ $routes->get('/testimoni/(:any)?', 'Home::testimoni/$1');
 
 // Admin
 $routes->get('/admin/home', 'Admin::index');
+$routes->get('/admin/login', 'Admin::login');
+$routes->post('/admin/auth', 'Admin::auth');
+$routes->get('/admin/logout', 'Admin::logout');
 
 // Admin Profil
 $routes->get('/admin/profile', 'ProfileController::index');
