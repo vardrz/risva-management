@@ -17,6 +17,11 @@ $routes->get('/admin/login', 'Admin::login');
 $routes->post('/admin/auth', 'Admin::auth');
 $routes->get('/admin/logout', 'Admin::logout');
 
+// Admin Profil
+$routes->get('/admin/profile', 'ProfileController::index');
+$routes->post('/admin/profile/save', 'ProfileController::save');
+$routes->post('/admin/profile/logo', 'ProfileController::logo');
+
 // Admin Paket
 $routes->get('/admin/paket', 'PaketController::index');
 $routes->post('/admin/paket/save', 'PaketController::save');
@@ -35,3 +40,11 @@ $routes->post('/admin/galeri/save', 'GaleriController::save');
 $routes->get('/admin/galeri/edit/(:num)', 'GaleriController::edit/$1');
 $routes->post('/admin/galeri/update/(:num)', 'GaleriController::update/$1');
 $routes->get('/admin/galeri/delete/(:num)', 'GaleriController::delete/$1');
+
+// Admin Testi
+$routes->get('/admin/testi', 'TestiController::index');
+$routes->get('/admin/testi/add', 'TestiController::add');
+$routes->post('/admin/testi/save', 'TestiController::save');
+$routes->get('/admin/testi/edit/(:num)', 'TestiController::edit/$1');
+$routes->post('/admin/testi/update/(:num)', 'TestiController::update/$1');
+$routes->get('/admin/testi/delete/(:num)', 'TestiController::delete/$1');
