@@ -326,57 +326,26 @@
   >
     Paket
   </h2>
-  <h3
-    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
-  >
-    Lorem ipsum dolor sit amet
-  </h3>
 
   <div
     class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
   >
-    <a href="/paket/1" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
+    <?php foreach($paket as $p): ?>
+    <a href="/paket/<?= $p['id_paket'] ?>" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
       <div>
-        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 1</h3>
+        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl"><?= $p['nama_paket'] ?></h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
           <ul class="list-disc px-4 group-hover:text-white">
-            <li>500-800 Tamu Undangan</li>
-            <li>4 Crew Profesional</li>
-            <li>Unlimited Consultation</li>
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
+            <?php foreach($item as $i): ?>
+              <?php if($i['id_paket'] == $p['id_paket']): ?>
+              <li><?= $i['item'] ?></li>
+              <?php endif; ?>
+            <?php endforeach; ?>
           </ul>
         </p>
       </div>
     </a>
-    <a href="/paket/2" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
-      <div>
-        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 2</h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          <ul class="list-disc px-4 group-hover:text-white">
-            <li>500-800 Tamu Undangan</li>
-            <li>4 Crew Profesional</li>
-            <li>Unlimited Consultation</li>
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-          </ul>
-        </p>
-      </div>
-    </a>
-    <a href="/paket/3" class="group rounded px-8 py-12 shadow border-2 border-primary hover:bg-primary">
-      <div>
-        <h3 class="pt-8 text-lg text-center font-bold uppercase text-primary group-hover:text-yellow lg:text-2xl">Paket 3</h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          <ul class="list-disc px-4 group-hover:text-white">
-            <li>500-800 Tamu Undangan</li>
-            <li>4 Crew Profesional</li>
-            <li>Unlimited Consultation</li>
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-          </ul>
-        </p>
-      </div>
-    </a>
+    <?php endforeach; ?>
     
   </div>
 </div>

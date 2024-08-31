@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Models\ItemPaketModel;
+use App\Models\PaketModel;
 use App\Models\ProfileModel;
 use App\Models\TestiModel;
 
@@ -8,27 +11,41 @@ class Home extends BaseController
 {
     protected $profileModel;
     protected $testiModel;
+    protected $paketModel;
+    protected $itemPaketModel;
 
     public function __construct()
     {
         $this->profileModel = new ProfileModel();
         $this->testiModel = new TestiModel();
+        $this->paketModel = new PaketModel();
+        $this->itemPaketModel = new ItemPaketModel();
     }
 
     public function index()
     {
         $profil = $this->profileModel->get()[0];
         $testi = $this->testiModel->get();
+        $paket = $this->paketModel->findAll();
+        $item = $this->itemPaketModel->findAll();
 
         return view('home', [
             "profil" => $profil,
             "testi" => $testi,
+            "paket" => $paket,
+            "item" => $item,
         ]);
     }
 
     public function paket($id){
+        $profil = $this->profileModel->get()[0];
+        $paket = $this->paketModel->getById($id)[0];
+        $item = $this->itemPaketModel->getByIdPaket($paket['id_paket']);
+        
         return view('paket', [
-            "id" => $id
+            "profil" => $profil,
+            "paket" => $paket,
+            "item" => $item,
         ]);
     }
 

@@ -27,8 +27,6 @@ class PaketController extends BaseController
             'relasi'    => $this->paketModel->AmbilItem()
         ];
 
-        dd($data);
-
         return view('paket/index', $data);
     }
 

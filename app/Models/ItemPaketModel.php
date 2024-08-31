@@ -10,6 +10,12 @@ class ItemPaketModel extends Model
     protected $primaryKey       = 'id_item';
     protected $allowedFields    = ['item', 'id_paket'];
 
+    public function getByIdPaket($id)
+    {
+        $builder = $this->db->table('item_paket');
+        $builder->select('*')->where('id_paket', $id);
+        return $builder->get()->getResultArray();
+    }
 
     // protected $useAutoIncrement = true;
     // protected $returnType       = 'array';

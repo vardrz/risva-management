@@ -18,6 +18,12 @@ class PaketModel extends Model
         return $builder->get()->getResultArray();
     }
 
+    public function getById($id)
+    {
+        $builder = $this->db->table('paket');
+        $builder->select('*')->where('id_paket', $id);
+        return $builder->get()->getResultArray();
+    }
 
     // protected $useAutoIncrement = true;
     // protected $returnType       = 'array';

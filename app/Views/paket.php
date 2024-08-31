@@ -69,7 +69,7 @@
   <div class="container flex items-center justify-between">
     <div>
       <a href="/">
-        <h3 class="text-white">LOGO</h3>
+        <img src="<?= base_url('uploaded/') . $profil['logo']; ?>" class="w-24">
       </a>
     </div>
     <div class="hidden lg:block">
@@ -222,16 +222,13 @@
     </div>
     <div class="prose max-w-none pt-8">
       <h2 id="lorem-ipsum-dolor-sit-amet">Deskripsi</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p><?= $paket['deskripsi'] ?></p>
 
       <h3 id="lorem-ipsum-dolor-sit-amet-1">Benefit</h3>
-      <p>Possent quippe. Conata fera ab Hersilie iam auditur haesit. Culpa ignis retia Aonides ictus crescendo micantes, petere, ambustaque vicem in digitos iubet cornigeris.</p>
       <ul>
-        <li>Iura demens satus vino simulac celanda</li>
-        <li>Exhibuere frustra utque</li>
-        <li>Iura demens satus vino simulac celanda</li>
-        <li>Exhibuere frustra utque</li>
-        <li>Panda pars umidus</li>
+        <?php foreach($item as $i): ?>
+        <li><?= $i['item'] ?></li>
+        <?php endforeach; ?>
       </ul>
     </div>
     <a href="/#paket" class="flex items-center mt-8">
@@ -248,24 +245,13 @@
       <div class="bg-primary">
   <div class="container flex flex-col justify-between py-6 sm:flex-row">
     <p class="text-center font-body text-white md:text-left">
-      © Copyright 2022. All right reserved, Risva Management.
+      © Copyright <?= date('Y') ?>. All right reserved, Risva Management.
     </p>
     <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-      <a href="/">
-        <i
-          class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"
-        ></i>
+      <a href="https://wa.me/<?= $profil['whatsapp']; ?>" class="pl-4">
+        <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
       </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
+      <a href="https://instagram.com/<?= str_replace("@", "", $profil['instagram']); ?>" class="pl-4">
         <i class="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
       </a>
     </div>
