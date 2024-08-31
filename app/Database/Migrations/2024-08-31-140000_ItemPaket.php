@@ -11,7 +11,7 @@ class ItemPaket extends Migration
         $this->forge->addField([
             'id_item'          => [
                 'type'              => 'INT',
-                'constraint'        => 11,
+                'constraint'        => 1,
                 'unsigned'          => true,
                 'auto_increment'    => true
             ],
@@ -21,12 +21,12 @@ class ItemPaket extends Migration
             ],
             'id_paket'             => [
                 'type'              => 'INT',
-                'constraint'        => 11
+                'constraint'        => 1
             ]
         ]);
 
         $this->forge->addKey('id_item', true);
-        $this->forge->addForeignKey('id_paket', 'paket', 'id_paket', 'CASCADE', 'RESTRICT');
+        // $this->forge->addForeignKey('id_paket', 'paket', 'id_paket');
         $this->forge->createTable('item_paket');
     }
 

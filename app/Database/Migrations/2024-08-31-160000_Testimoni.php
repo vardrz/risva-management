@@ -9,23 +9,27 @@ class Testimoni extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_testi'          => [
+            'id_testi'              => [
                 'type'              => 'INT',
                 'constraint'        => 11,
                 'unsigned'          => true,
                 'auto_increment'    => true
             ],
-            'nama'             => [
+            'nama'                  => [
                 'type'              => 'VARCHAR',
                 'constraint'        => 150
             ],
-            'pesan'             => [
+            'pesan'                 => [
                 'type'              => 'VARCHAR',
                 'constraint'        => 1000
+            ],
+            'image'                 => [
+                'type'              => 'VARCHAR',
+                'constraint'        => 225
             ]
         ]);
 
-        $this->forge->addKey('id_testimoni', true);
+        $this->forge->addKey('id_testi', true);
         $this->forge->createTable('testimoni');
     }
 

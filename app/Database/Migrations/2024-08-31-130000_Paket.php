@@ -11,7 +11,7 @@ class Paket extends Migration
         $this->forge->addField([
             'id_paket'          => [
                 'type'              => 'INT',
-                'constraint'        => 11,
+                'constraint'        => 1,
                 'unsigned'          => true,
                 'auto_increment'    => true
             ],

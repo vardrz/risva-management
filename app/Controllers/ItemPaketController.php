@@ -64,9 +64,8 @@ class ItemPaketController extends BaseController
             return redirect()->to('/admin/paket')->withInput();
         }
 
-        $this->itemPaketModel->update($id, [
+        $this->itemPaketModel->update($this->request->getPost('edit_id_paket'), [
             'item'    => $this->request->getPost('edit_item'),
-            'id_paket' => $this->request->getPost('edit_id_paket')
         ]);
 
         session()->setFlashdata('pesan', 'Data berhasil diubah.');
