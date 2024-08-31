@@ -1,12 +1,29 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ProfileModel;
+use App\Models\TestiModel;
 
 class Home extends BaseController
 {
+    protected $profileModel;
+    protected $testiModel;
+
+    public function __construct()
+    {
+        $this->profileModel = new ProfileModel();
+        $this->testiModel = new TestiModel();
+    }
+
     public function index()
     {
-        return view('home');
+        $profil = $this->profileModel->get()[0];
+        $testi = $this->testiModel->get();
+
+        return view('home', [
+            "profil" => $profil,
+            "testi" => $testi,
+        ]);
     }
 
     public function paket($id){
@@ -22,8 +39,12 @@ class Home extends BaseController
     }
 
     public function testimoni($id){
+        $profil = $this->profileModel->get()[0];
+        $testi = $this->testiModel->getById($id)[0];
+        
         return view('testimoni', [
-            "id" => $id
+            "profil" => $profil,
+            "testi" => $testi
         ]);
     }
 }

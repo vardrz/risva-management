@@ -100,7 +100,7 @@
   <div class="container flex items-center justify-between">
     <div>
       <a href="/">
-        <h3 class="text-white">LOGO</h3>
+        <img src="<?= base_url('uploaded/') . $profil['logo']; ?>" class="w-24">
       </a>
     </div>
     <div class="hidden lg:block">
@@ -270,7 +270,7 @@
         >
           Risva Management
         </h1>
-        <div class="pt-5 text-white text-center text-md md:text-xl">We Serve, We Plan, We Organize</div>
+        <div class="pt-5 text-white text-center text-md md:text-xl"><?= $profil['slogan']; ?></div>
       </div>
     </div>
   </div>
@@ -285,13 +285,7 @@
         Profil
       </h2>
       <p class="pt-6 font-body leading-relaxed text-grey-20">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        <?= $profil['deskripsi'] ?>
       </p>
       <div
         class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
@@ -307,12 +301,12 @@
         <div
           class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
         >
-          <a href="/">
+          <a href="https://wa.me/<?= $profil['whatsapp']; ?>">
             <i
-              class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"
+              class="bx bxl-whatsapp text-2xl text-primary hover:text-yellow"
             ></i>
           </a>
-          <a href="/" class="pl-4">
+          <a href="https://instagram.com/<?= str_replace("@", "", $profil['instagram']); ?>" class="pl-4">
             <i
               class="bx bxl-instagram text-2xl text-primary hover:text-yellow"
             ></i>
@@ -321,7 +315,7 @@
       </div>
     </div>
     <div class="flex w-full justify-center pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-      <iframe class="w-full h-56" src="https://www.youtube.com/embed/EF3phwI-5DY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe class="w-full h-56" src="<?= str_replace('youtu.be', 'www.youtube.com/embed', $profil['youtube_video']); ?>" title="Profil Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -457,92 +451,25 @@
     <h4
       class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
     >
-      Lorem ipsum dolor sit amet
+      Beberapa testimoni dari klien kami
     </h4>
     <div class="swiper mySwiper pt-8">
       <div class="swiper-wrapper w-max">
-        <a href="/testimoni/2" class="swiper-slide">
+        <?php foreach($testi as $data): ?>
+        <a href="/testimoni/<?= $data['id_testi'] ?>" class="swiper-slide">
           <div class="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
             <p
               class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-              Pagedone has made it possible for me to stay on top of my portfolio and make
-              informed
-              decisions
-              quickly and easily.
+              <?= $data['pesan'] ?>
             </p>
             <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
               <div class="block">
-                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Jane D</h5>
-                <span class="text-sm leading-4 text-gray-500">CEO </span>
+                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1"><?= $data['nama'] ?></h5>
               </div>
             </div>
           </div>
         </a>
-        <a href="/testimoni/2" class="swiper-slide">
-          <div class="group bg-white border border-solid border-gray-300 flex justify-between flex-col rounded-xl p-6 transition-all duration-500  w-full mx-auto hover:border-indigo-600 slide_active:border-indigo-600 hover:shadow-sm">
-            <p class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-              Thanks to pagedone, I feel more informed and confident about my investment decisions
-              than
-              ever
-              before.
-            </p>
-            <div class="flex items-center gap-5 pt-5 border-t border-solid border-gray-200">
-              <div class="block">
-                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Harsh P.
-                </h5>
-                <span class="text-sm leading-4 text-gray-500">Product Designer</span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/testimoni/2" class="swiper-slide">
-          <div class=" flex justify-between flex-col lg:w-full group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm">
-            <p class="text-base text-gray-600 leading-6  transition-all duration-500  pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-              The customer service team at pagedone went above and beyond to help me resolve a
-              billing
-              issue.
-            </p>
-            <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-              <div class="block">
-                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Alex K.</h5>
-                <span class="text-sm leading-4 text-gray-500">Design Lead</span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/testimoni/2" class="swiper-slide">
-          <div class="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm">
-            <p class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-              Pagedone has made it possible for me to stay on top of my portfolio and make
-              informed
-              decisions
-              quickly and easily.
-            </p>
-            <div class="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-              <div class="block">
-                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Jane D</h5>
-                <span class="text-sm leading-4 text-gray-500">CEO </span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/testimoni/2" class="swiper-slide">
-          <div class="group bg-white border border-solid border-gray-300 flex justify-between flex-col rounded-xl p-6 transition-all duration-500  w-full mx-auto slide_active:border-indigo-600 hover:border-indigo-600 hover:shadow-sm ">
-            <p class="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-              Thanks to pagedone, I feel more informed and confident about my investment decisions
-              than
-              ever
-              before.
-            </p>
-            <div class="flex items-center gap-5 pt-5 border-t border-solid border-gray-200">
-              <div class="block">
-                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Harsh P.
-                </h5>
-                <span class="text-sm leading-4 text-gray-500">Product Designer</span>
-              </div>
-            </div>
-          </div>
-        </a>
+        <?php endforeach; ?>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -558,16 +485,8 @@
   <h4
     class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
   >
-    Here's a contact form
+    Anda bisa menghubungi kami lewat kontak dibawah ini
   </h4>
-  <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-    <p class="font-body text-grey-10">
-      Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit
-      condimentum turpis nisl sem, viverra habitasse urna ante lobortis
-      fermentum accumsan. Viverra habitasse urna ante lobortis fermentum
-      accumsan.
-    </p>
-  </div>
   <div class="flex flex-col pt-16 lg:flex-row">
     <div
       class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3"
@@ -579,7 +498,7 @@
         </p>
       </div>
       <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-        +628 1500 2100
+        <?= $profil['whatsapp']; ?>
       </p>
     </div>
     <div
@@ -592,7 +511,7 @@
         </p>
       </div>
       <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-        @risva_management
+        <?= $profil['instagram']; ?>
       </p>
     </div>
     <div
@@ -605,7 +524,7 @@
         </p>
       </div>
       <p class="pt-2 text-left font-body font-bold text-primary text-sm">
-        Jl. Letjend S Parman Gg. Sawunggalih, RT.005/RW.04, Kebanyon, Kasepuhan, Kec. Batang, Kabupaten Batang, Jawa Tengah 51214, Indonesia
+        <?= $profil['alamat']; ?>
       </p>
     </div>
   </div>
@@ -617,24 +536,13 @@
       <div class="bg-primary">
   <div class="container flex flex-col justify-between py-6 sm:flex-row">
     <p class="text-center font-body text-white md:text-left">
-      © Copyright 2024. All right reserved, Risva Management.
+      © Copyright <?= date('Y') ?>. All right reserved, Risva Management.
     </p>
     <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-      <a href="/">
-        <i
-          class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"
-        ></i>
+      <a href="https://wa.me/<?= $profil['whatsapp']; ?>" class="pl-4">
+        <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
       </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
-        <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="/" class="pl-4">
+      <a href="https://instagram.com/<?= str_replace("@", "", $profil['instagram']); ?>" class="pl-4">
         <i class="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
       </a>
     </div>
