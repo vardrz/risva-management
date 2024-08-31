@@ -21,9 +21,10 @@ class PaketController extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Paket',
-            'paket' => $this->paketModel->findAll(),
-            'item'  => $this->itemPaketModel->findAll()
+            'title'     => 'Paket',
+            'paket'     => $this->paketModel->findAll(),
+            'item'      => $this->itemPaketModel->findAll(),
+            'relasi'    => $this->paketModel->AmbilItem()
         ];
 
         return view('paket/index', $data);

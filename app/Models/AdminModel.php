@@ -4,19 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PaketModel extends Model
+class AdminModel extends Model
 {
-    protected $table            = 'paket';
-    protected $primaryKey       = 'id_paket';
-    protected $allowedFields    = ['nama_paket', 'deskripsi', 'harga'];
-
-    public function AmbilItem()
-    {
-        $builder = $this->db->table('paket');
-        $builder->select('paket.id_paket, paket.nama_paket, paket.deskripsi, paket.harga, item_paket.item, item_paket.id_item');
-        $builder->join('item_paket', 'item_paket.id_paket = paket.id_paket');
-        return $builder->get()->getResultArray();
-    }
+    protected $table            = 'admin';
+    protected $primaryKey       = 'id';
+    protected $allowedFields    = ['email', 'username', 'password'];
 
 
     // protected $useAutoIncrement = true;

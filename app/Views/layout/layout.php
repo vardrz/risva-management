@@ -107,11 +107,14 @@
                     </div>
                     <div class="md:mr-3">
                         <div class="dropdown dropdown-end">
-                            <button tabindex="0" role="button" class="btn btn-ghost btn-circle inline-flex justify-center">
-                                <img class="w-8 h-8 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWQQdRQ1JIuiKNvTqBukJH4WugmOWF7A_-w&s" alt="Foto Profil">
-                            </button>
+                            <div class="flex justify-center items-center">
+                                <span class="text-xs capitalize"><?= session()->username; ?></span>
+                                <button tabindex="0" role="button" class="btn btn-ghost btn-circle inline-flex justify-center">
+                                    <img class="w-8 h-8 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWQQdRQ1JIuiKNvTqBukJH4WugmOWF7A_-w&s" alt="Foto Profil">
+                                </button>
+                            </div>
                             <ul tabindex="0" class="dropdown-content menu bg-emerald-700 rounded-box z-[1] w-52 p-2 shadow">
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="<?= base_url('admin/logout'); ?>">Logout</a></li>
                             </ul>
                         </div>
                     </div>
