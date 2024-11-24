@@ -1,269 +1,198 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Costum CSS -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/responsive-style.css') ?>">
+
+    <!-- AOS Animate -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title><?= $paket['nama_paket'] ?> - Risva Management</title>
-    <!-- <link rel="canonical" href="//" /> -->
+</head>
 
-    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
-    <meta name="theme-color" content="#5540af" />
-    <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link
-        as="style"
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-        rel="preload"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-        rel="stylesheet"
-    />
-    <link
-        crossorigin="anonymous"
-        href="/assets/styles/main.min.css"
-        media="screen"
-        rel="stylesheet"
-    />
-  
-    <script
-      defer
-      src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-    ></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css"
-    />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<body>
+    <!-- Navbar Section Open -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="<?= base_url('uploaded/') . $profil['logo']; ?>" class="me-2" alt="brand" width="50">
+                <span class="text-dark">Risva Management</span>
+            </a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-0 active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="/#paket">Paket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="/#gallery">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="/#testi">Testimoni</a>
+                    </li>
+                </ul>
+                <a href="/#contact" class="ml-3 btn btn-primary shadow-none">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Section Close -->
+
+    <!-- Home Section Open -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+              <div class="home-content" data-aos="fade-up" data-aos-duration="1000">
+                  <h1 class="text-home-bold fw-bold text-dark mt-1" style="text-align: justify;">
+                    <span class="text-primary"><?= $paket['nama_paket'] ?></span>
+                  </h1>
+                  <p class="badge fs-6 fw-normal bg-primary-light text-primary"><?= 'Rp ' . number_format($paket['harga'], 0, ".", ","); ?></p>
+                  <h4 class="text-home-reguler fw-normal text-secondary">
+                    <?= $paket['deskripsi'] ?>
+                  </h4>
+                  <h3 id="lorem-ipsum-dolor-sit-amet-1">Apa yang anda dapat?</h3>
+                  <ul>
+                    <?php foreach($item as $i): ?>
+                    <li><?= $i['item'] ?></li>
+                    <?php endforeach; ?>
+                  </ul>
+                  <div class="home-btn mt-5">
+                      <a href="#contact" class="btn btn-primary shadow-none mb-3">Order now</a>
+                      <a href="/#paket" class="btn btn-secondary shadow-none mb-3">Kembali</a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section Close -->
+
+
+
+
+    <!-- Newslatter Section Open -->
+    <section class="newslatter" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="newslatter-content bg-primary text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="title-newslatter fw-bold text-white mb-5">Hubungi kami lewat kontak dibawah ini</h2>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="w-100 d-flex flex-row mt-3">
+                              <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=ffffff" width="20" height="20">
+                              <span style="margin-left: 10px;" class="text-white"><?= $profil['whatsapp']; ?></span>
+                            </div>
+                            <div class="w-100 d-flex flex-row mt-3">
+                              <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=ffffff" width="20" height="20">
+                              <span style="margin-left: 10px;" class="text-white"><?= $profil['instagram']; ?></span>
+                            </div>
+                            <div class="w-100 d-flex flex-row mt-3">
+                              <img src="https://img.icons8.com/?size=100&id=53430&format=png&color=ffffff" width="20" height="20">
+                              <span style="margin-left: 10px; text-align: start;" class="text-white"><?= $profil['alamat']; ?></span>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=+(Risva%20Management)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newslatter Section Close -->
+
+    <!-- Footer Section Open -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-lg-5">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-10">
+                            <a href="#" class="footer-brand">
+                                <img src="<?= base_url('uploaded/') . $profil['logo'] ?>" width="80" class="me-3" alt="brand">
+                                <span class="text-dark">Risva Management</span>
+                                <p class="text-secondary mt-3">
+                                  <?= $profil['deskripsi'] ?>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="footer-content">
+                                <span>Info</span>
+                                <ul class="footer-link mt-3 list-unstyled">
+                                    <li><a href="/#paket" class="py-1 d-block">Paket</a></li>
+                                    <li><a href="/#gallery" class="py-1 d-block">Gallery</a></li>
+                                    <li><a href="/#testi" class="py-1 d-block">Testimoni</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="footer-content">
+                                <span>Contact</span>
+                                <ul class="footer-link mt-3 list-unstyled">
+                                    <li><a href="#" class="py-1 d-block">Batang - Indonesia</a></li>
+                                    <li><a href="#" class="py-1 d-block"><?= $profil['whatsapp'] ?></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <p class="copyright text-secondary text-center">
+                        Copyright &copy; <?= date('Y') ?> All rights reserved | <a class="text-primary" href="#">Risva Management</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section Close -->
+
+    <!-- AOS Animate on Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Add Drop Shadow on Scroll -->
     <script>
-      hljs.highlightAll();
-    </script>  
-  </head>
+        window.addEventListener('scroll', (e) => {
+            const nav = document.querySelector('.navbar');
+            if (window.pageYOffset > 0) {
+                nav.classList.add("drop-shadow");
+            } else {
+                nav.classList.remove("drop-shadow");
+            }
+        });
+    </script>
 
+    <script>
+        AOS.init();
+    </script>
 
-  <body
-    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
-    class="relative"
-    x-data="{ mobileMenu: false }"
-  >
-    
-    <div id="main" class="relative">
-      <div
-  x-data="{
-    triggerNavItem(id) {
-        $scroll(id)
-    },
-    triggerMobileNavItem(id) {
-        mobileMenu = false;
-        this.triggerNavItem(id)
-    }
-}"
->
-  <div class="w-full z-50 top-0 py-3 sm:py-5  bg-primary ">
-  <div class="container flex items-center justify-between">
-    <div>
-      <a href="/">
-        <img src="<?= base_url('uploaded/') . $profil['logo']; ?>" class="w-24">
-      </a>
-    </div>
-    <div class="hidden lg:block">
-      <ul class="flex items-center">
-        
-        <li class="group pl-6">
-          
-          <a
-            href='/#profil'
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Profil</a>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-          ></span>
-        </li>
-        
-        <li class="group pl-6">
-          
-          <a
-            href='/#paket'
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Paket</a>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-          ></span>
-        </li>
-        
-        <li class="group pl-6">
-          
-          <a
-            href='/#galeri'
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Galeri</a>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-          ></span>
-        </li>
-        
-        <li class="group pl-6">
-          
-          <a
-            href='/#testimoni'
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Testimoni</a>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-          ></span>
-        </li>
-        
-        <li class="group pl-6">
-          
-          <a
-            href='/#kontak'
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Kontak</a>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-          ></span>
-        </li>
-        
-      </ul>
-    </div>
-    <div class="block lg:hidden">
-      <button @click="mobileMenu = true">
-        <i class="bx bx-menu text-4xl text-white"></i>
-      </button>
-    </div>
-  </div>
-</div>
+</body>
 
-<div
-  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
->
-  <div
-    class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3"
-  >
-    <button
-      class="absolute top-0 right-0 mt-4 mr-4"
-      @click="mobileMenu = false"
-    >
-      <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
-    </button>
-
-    <ul class="mt-8 flex flex-col">
-      
-      <li class="py-2">
-        
-        <a
-          href='/#profil'
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Profil</a>
-        
-      </li>
-      
-      <li class="py-2">
-        
-        <a
-          href='/#paket'
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Paket</a>
-        
-      </li>
-      
-      <li class="py-2">
-        
-        <a
-          href='/#galeri'
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Galeri</a>
-        
-      </li>
-      
-      <li class="py-2">
-        
-        <a
-          href='/#testimoni'
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Testimoni</a>
-        
-      </li>
-      
-      <li class="py-2">
-        
-        <a
-          href='/#kontak'
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Kontak</a>
-        
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-
-      <div><div class="container py-6 md:py-10">
-  <div class="mx-auto max-w-4xl">
-    <div class="flex flex-col py-5">
-      <span class="font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl"
-      >
-        <?= $paket['nama_paket'] ?>
-      </span>
-      <span class="text-lg font-bold pt-3">
-        <?= 'Rp ' . number_format($paket['harga'], 0, ".", ","); ?>
-      </span>
-    </div>
-    <div class="prose max-w-none pt-8">
-      <h2 id="lorem-ipsum-dolor-sit-amet">Deskripsi</h2>
-      <p><?= $paket['deskripsi'] ?></p>
-
-      <h3 id="lorem-ipsum-dolor-sit-amet-1">Benefit</h3>
-      <ul>
-        <?php foreach($item as $i): ?>
-        <li><?= $i['item'] ?></li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-    <a href="/#paket" class="flex items-center mt-8">
-      <i class="bx bx-left-arrow-alt text-2xl text-primary"></i>
-      <span
-        class="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5"
-        >Kembali</span
-      >
-    </a>
-  </div>
-</div>
-</div>
-
-      <div class="bg-primary mt-10">
-  <div class="container flex flex-col justify-between py-6 sm:flex-row">
-    <p class="text-center font-body text-white md:text-left">
-      © Copyright <?= date('Y') ?>. All right reserved, Risva Management.
-    </p>
-    <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-      <a href="https://wa.me/<?= $profil['whatsapp']; ?>" class="pl-4">
-        <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
-      </a>
-      <a href="https://instagram.com/<?= str_replace("@", "", $profil['instagram']); ?>" class="pl-4">
-        <i class="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-    </div>
-
-    <script src="/assets/js/main.js"></script>
-
-    
-  </body>
 </html>
