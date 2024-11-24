@@ -68,7 +68,19 @@
                   <h4 class="text-home-reguler fw-normal text-secondary">
                     <?= $galeri['deskripsi'] ?>
                   </h4>
-                  <img src="<?= base_url('img/') . $galeri['foto'] ?>" class="w-100">
+                  <?php if($galeri['type'] == 'foto'): ?>
+                    <img src="<?= base_url('img/') . $galeri['foto'] ?>" class="w-100">
+                  <?php else: ?>
+                    <iframe
+                        width="300"
+                        height="480"
+                        src="<?= $galeri['foto']; ?>"
+                        title="Video Short"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                  <?php endif; ?>
                   <div class="home-btn mt-5">
                       <a href="/#gallery" class="btn btn-secondary shadow-none mb-3">Kembali</a>
                   </div>

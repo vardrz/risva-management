@@ -71,7 +71,7 @@
                           <?= $profil['deskripsi']; ?>
                         </h4>
                         <div class="home-btn mt-5">
-                            <a href="#paket" class="btn btn-primary shadow-none mb-3">Order now</a>
+                            <a href="#paket" class="btn btn-primary shadow-none mb-3">Lihat Paket</a>
                         </div>
                     </div>
                 </div>
@@ -130,22 +130,48 @@
     <!-- Menu Section Open -->
     <section class="menu" style="margin-top: 200px;" id="gallery">
         <div class="container">
-            <h2 class="fw-bold text-dark mt-3">Gallery</h2>
-            <div class="row">
-              <?php foreach($galeri as $g): ?>
-                <div class="col-md-4">
-                  <div class="card-menu bg-white mt-3" data-aos="fade-up" data-aos-duration="1000">
-                    <a href="/galeri/<?= $g['id_galeri'] ?>">
-                      <div class="item">
-                        <img src="<?= base_url('img/') . $g['foto'] ?>" alt="">
-                        <h5 class="menu-title text-dark mt-3"><?= $g['judul']; ?></h5>
-                        <p class="text-secondary mt-2"><?= $g['deskripsi']; ?></p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              <?php endforeach; ?>
-            </div>
+            <h2 class="fw-bold text-dark text-center mt-3">Gallery</h2>
+            <h4 class="text-dark text-center mt-5">Gallery Foto</h4>
+            <swiper-container class="mySwiper" pagination="true" navigation="true" pagination-clickable="true" space-between="30" slides-per-view="3">
+                <?php foreach($galeriFoto as $g): ?>
+                    <swiper-slide>
+                        <div class="card-menu bg-white">
+                            <a href="/galeri/<?= $g['id_galeri'] ?>">
+                            <div class="item">
+                                <img src="<?= base_url('img/') . $g['foto'] ?>" style="aspect-ratio:1/1; object-fit:cover">
+                                <h5 class="menu-title text-dark mt-3"><?= $g['judul']; ?></h5>
+                                <p class="text-secondary mt-2"><?= $g['deskripsi']; ?></p>
+                            </div>
+                            </a>
+                        </div>
+                    </swiper-slide>
+                <?php endforeach; ?>
+            </swiper-container>
+
+            <h4 class="text-dark text-center mt-5">Gallery Video</h4>
+            <swiper-container class="mySwiper" pagination="true" navigation="true" pagination-clickable="true" space-between="30" slides-per-view="4">
+                <?php foreach($galeriVideo as $g): ?>
+                    <swiper-slide>
+                        <div class="card-menu bg-white">
+                            <a href="/galeri/<?= $g['id_galeri'] ?>">
+                            <div class="item">
+                                <iframe
+                                    width="225"
+                                    height="350"
+                                    src="<?= $g['foto']; ?>"
+                                    title="Video Short"
+                                    frameborder="0"
+                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                                <h5 class="menu-title text-dark mt-3"><?= $g['judul']; ?></h5>
+                                <p class="text-secondary mt-2"><?= $g['deskripsi']; ?></p>
+                            </div>
+                            </a>
+                        </div>
+                    </swiper-slide>
+                <?php endforeach; ?>
+            </swiper-container>
         </div>
     </section>
     <!-- Menu Section Close -->
@@ -292,6 +318,7 @@
         AOS.init();
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 
 </html>

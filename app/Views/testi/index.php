@@ -111,7 +111,7 @@
                             <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                                 <?= $d['nama']; ?>
                             </th>
-                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-wrap">
                                 <?= $d['pesan']; ?>
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">

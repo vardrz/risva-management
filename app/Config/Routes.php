@@ -37,9 +37,12 @@ $routes->get('/admin/item_paket/delete/(:num)', 'ItemPaketController::delete/$1'
 // Admin Galeri
 $routes->get('/admin/galeri', 'GaleriController::index');
 $routes->get('/admin/galeri/add', 'GaleriController::add');
+$routes->get('/admin/galeri/add-video', 'GaleriController::addVideo');
 $routes->post('/admin/galeri/save', 'GaleriController::save');
+$routes->post('/admin/galeri/save-video', 'GaleriController::saveVideo');
 $routes->get('/admin/galeri/edit/(:num)', 'GaleriController::edit/$1');
 $routes->post('/admin/galeri/update/(:num)', 'GaleriController::update/$1');
+$routes->post('/admin/galeri/update-video/(:num)', 'GaleriController::updateVideo/$1');
 $routes->get('/admin/galeri/delete/(:num)', 'GaleriController::delete/$1');
 
 // Admin Testi

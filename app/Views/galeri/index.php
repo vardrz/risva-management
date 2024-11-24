@@ -72,9 +72,16 @@
                     <line x1="9" y1="12" x2="15" y2="12" />
                     <line x1="12" y1="9" x2="12" y2="15" />
                 </svg>
-                <span>
-                    Tambah Galeri
-                </span>
+                <span>Tambah Foto</span>
+            </a>
+            <a href="<?= base_url('admin/galeri/add-video'); ?>" class="flex items-center space-x-2 bg-primary text-white rounded-sm py-2 pr-3 pl-2 text-sm ml-2">
+                <svg class="h-5 w-5 text-white-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <line x1="9" y1="12" x2="15" y2="12" />
+                    <line x1="12" y1="9" x2="12" y2="15" />
+                </svg>
+                <span>Tambah Video</span>
             </a>
         </div>
         <div class="card-body relative overflow-x-auto shadow-md border">
@@ -107,11 +114,23 @@
                             <th scope="row" class="text-center px-6 py-4 font-medium whitespace-nowrap">
                                 <?= $value['judul']; ?><br>
                             </th>
-                            <th scope="row" class="px-6 py-4 font-medium whitespace-normal">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-wrap">
                                 <?= $value['deskripsi']; ?>
                             </th>
                             <th scope="row" class="text-right px-6 py-4 font-medium whitespace-nowrap">
-                                <img class="img-fluid" src="<?= base_url('img/' . $value['foto']); ?>" alt="<?= $value['judul']; ?>">
+                                <?php if($value['type'] == 'foto'): ?>
+                                    <img width="200" src="<?= base_url('img/' . $value['foto']); ?>" alt="<?= $value['judul']; ?>">
+                                <?php else: ?>
+                                    <iframe
+                                        width="150"
+                                        height="250"
+                                        src="<?= $value['foto'] ?>"
+                                        title="Video Short"
+                                        frameborder="0"
+                                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                <?php endif; ?>
                             </th>
                             <td class="px-6 py-4">
                                 <div class="flex justify-center items-center space-x-2">

@@ -29,7 +29,8 @@ class Home extends BaseController
     {
         $profil = $this->profileModel->get()[0];
         $testi = $this->testiModel->get();
-        $galeri = $this->galeriModel->findAll();
+        $galeriFoto = $this->galeriModel->where('type', 'foto')->findAll();
+        $galeriVideo = $this->galeriModel->where('type', 'video')->findAll();
         $paket = $this->paketModel->findAll();
         $item = $this->itemPaketModel->findAll();
 
@@ -38,7 +39,8 @@ class Home extends BaseController
             "testi" => $testi,
             "paket" => $paket,
             "item" => $item,
-            "galeri" => $galeri,
+            "galeriFoto" => $galeriFoto,
+            "galeriVideo" => $galeriVideo,
         ]);
     }
 

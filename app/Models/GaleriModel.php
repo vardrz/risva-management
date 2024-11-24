@@ -8,7 +8,7 @@ class GaleriModel extends Model
 {
     protected $table            = 'galeri';
     protected $primaryKey       = 'id_galeri';
-    protected $allowedFields    = ['judul', 'deskripsi', 'foto'];
+    protected $allowedFields    = ['judul', 'deskripsi', 'foto', 'type'];
 
 
     // protected $useAutoIncrement = true;
