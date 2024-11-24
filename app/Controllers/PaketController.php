@@ -104,6 +104,40 @@ class PaketController extends BaseController
         return redirect()->to('/admin/paket');
     }
 
+
+    public function image()
+    {
+        $rules = [
+            'image' => 'uploaded[image]|max_size[image, 2042]|mime_in[image,image/jpg,image/jpeg,image/png]'
+        ];
+
+        $messages = [
+            "image" => [
+                "uploaded" => "Gambar harus diupload",
+                "max_size" => "Ukuran file max 2 MB",
+                "mime_in" => "Hanya gambar dengan format jpg, jpeg, png yang diizinkan",
+            ],
+        ];
+
+        if (!$this->validate($rules, $messages)) {
+            session()->setFlashdata('error', 'Gagal upload gambar, cek ulang.');
+            return redirect()->to('/admin/paket');
+        }
+
+        $image = $this->request->getFile('image');
+        if ($image->isValid() && !$image->hasMoved()) {
+            $imageName = "gambar-paket-" . $this->request->getPost('id_paket') . ".jpg";
+            $image->move(FCPATH  . 'uploaded/paket', $imageName, true);
+
+            $this->paketModel->update($this->request->getPost('id_paket'), [
+                'image' => $imageName
+            ]);
+        }
+
+        session()->setFlashdata('pesan', 'Gambar paket berhasil diganti.');
+        return redirect()->to('/admin/paket');
+    }
+
     public function delete($id)
     {
         $this->paketModel->delete($id);

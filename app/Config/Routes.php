@@ -27,6 +27,7 @@ $routes->get('/admin/paket', 'PaketController::index');
 $routes->post('/admin/paket/save', 'PaketController::save');
 $routes->post('/admin/paket/update/(:num)', 'PaketController::update/$1');
 $routes->get('/admin/paket/delete/(:num)', 'PaketController::delete/$1');
+$routes->post('/admin/paket/image', 'PaketController::image');
 
 // Admin Item Paket
 $routes->post('/admin/item_paket/save', 'ItemPaketController::save');

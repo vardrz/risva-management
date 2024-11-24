@@ -68,7 +68,7 @@
                           <span class="text-primary">Risva</span> Management
                         </h1>
                         <h4 class="text-home-reguler fw-normal text-secondary">
-                          <?= $profil['alamat']; ?>
+                          <?= $profil['deskripsi']; ?>
                         </h4>
                         <div class="home-btn mt-5">
                             <a href="#paket" class="btn btn-primary shadow-none mb-3">Order now</a>
@@ -93,16 +93,10 @@
             <div class="row">
               <?php foreach($paket as $p): ?>
                 <div class="col-sm-4 content mt-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?= $p['image'] ? (base_url('uploaded/paket/') . $p['image']) : base_url('assets/dummy.jpg') ?>" class="img-fluid w-75" alt="<?= "Foto Paket " . $p['nama_paket'] ?>">
                     <h3 class="services-title text-dark mt-4"><?= $p['nama_paket'] ?></h3>
-                    <h5 class="services-title text-dark mt-4"><?= 'Rp ' . number_format($p['harga'], 0, ".", ","); ?></h5>
-                    <p class="text-secondary mt-3">
-                      <?php foreach($item as $i): ?>
-                        <?php if($i['id_paket'] == $p['id_paket']): ?>
-                          <span><?= $i['item'] ?></span><br/>
-                        <?php endif; ?>
-                      <?php endforeach; ?>
-                    </p>
-                    <a href="/paket/<?= $p['id_paket'] ?>" class="btn btn-sm btn-primary">Order</a>
+                    <h5 class="services-title text-dark mt-2"><?= 'Rp ' . number_format($p['harga'], 0, ".", ","); ?></h5>
+                    <a href="/paket/<?= $p['id_paket'] ?>" class="mt-4 btn btn-sm btn-primary">Lihat Detail</a>
                 </div>
               <?php endforeach; ?>
             </div>
@@ -111,7 +105,7 @@
     <!-- Services Section Close -->
 
     <!-- About Section Open -->
-    <section class="about" id="about">
+    <!-- <section class="about" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
@@ -130,11 +124,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- About Section Close -->
 
     <!-- Menu Section Open -->
-    <section class="menu" id="gallery">
+    <section class="menu" style="margin-top: 200px;" id="gallery">
         <div class="container">
             <h2 class="fw-bold text-dark mt-3">Gallery</h2>
             <div class="row">

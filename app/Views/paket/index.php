@@ -46,6 +46,22 @@
             <span><?= session()->getFlashdata('pesan'); ?></span>
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 inset-y-0 my-auto" onclick="this.parentElement.style.display='none';">✕</button>
         </div>
+    <?php elseif (session()->getFlashdata('error')) : ?>
+        <div role="alert" class="alert alert-error relative flex items-center">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span><?= session()->getFlashdata('error'); ?></span>
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 inset-y-0 my-auto" onclick="this.parentElement.style.display='none';">✕</button>
+        </div>
     <?php elseif (session()->getFlashdata('hapus')) : ?>
         <div role="alert" class="alert alert-success relative flex items-center">
             <svg
@@ -114,6 +130,14 @@
                             <td scope="row" class="align-top px-6 py-4 font-medium text-warp">
                                 <?= $value['deskripsi']; ?><br>
                             </td>
+                            <td scope="row" class="align-top px-6 py-4">
+                                <img
+                                    src="<?= $value['image'] ? (base_url('uploaded/paket/') . $value['image']) : base_url('assets/dummy.jpg') ?>"
+                                    width="150"
+                                    style="cursor:pointer"
+                                    onclick="showModalImage('<?= $value['id_paket'] ?>')"
+                                >
+                            </td>
                             <td scope="row" class="flex flex-col items-end py-4 font-medium whitespace-nowrap">
                                 <?php foreach ($item as $key) : ?>
                                     <?php if ($key['id_paket'] == $value['id_paket']) : ?>
@@ -162,7 +186,45 @@
     </div>
 </div>
 
+<!-- Image -->
+<dialog id="modal_image" class="modal">
+    <div class="modal-box max-w-md">
+        <form method="dialog">
+            <button type="submit" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        <h3 class="text-lg font-bold mb-3 text-center">Ganti Gambar</h3>
+        <form action="<?= base_url('admin/paket/image'); ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_paket" id="modal_id_paket">
+            <div class="mb-3">
+                <input type="file" name="image" onchange="loadFile(event)" class="mb-3">
+                <img src="<?= base_url('assets/dummy.jpg') ?>" id="output" class="img-fluid">
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="btn btn-sm btn-block btn-primary">Simpan</button>
+            </div>
+        </form>
+    </div>
+</dialog>
+
 <?= $this->include('paket/modal'); ?>
 <?= $this->include('paket/modal_item'); ?>
 
+<?= $this->endSection() ?>
+
+
+<?= $this->section('script') ?>
+<script>
+    function showModalImage(id){
+        document.querySelector("#modal_image").showModal();
+        document.querySelector("#modal_id_paket").value = id;
+    }
+
+    var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+        }
+    };
+</script>
 <?= $this->endSection() ?>

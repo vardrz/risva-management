@@ -60,26 +60,31 @@
     <!-- Home Section Open -->
     <section class="home" id="home">
         <div class="container">
-            <div class="row align-items-center">
-              <div class="home-content" data-aos="fade-up" data-aos-duration="1000">
-                  <h1 class="text-home-bold fw-bold text-dark mt-1" style="text-align: justify;">
-                    <span class="text-primary"><?= $paket['nama_paket'] ?></span>
-                  </h1>
-                  <p class="badge fs-6 fw-normal bg-primary-light text-primary"><?= 'Rp ' . number_format($paket['harga'], 0, ".", ","); ?></p>
-                  <h4 class="text-home-reguler fw-normal text-secondary">
-                    <?= $paket['deskripsi'] ?>
-                  </h4>
-                  <h3 id="lorem-ipsum-dolor-sit-amet-1">Apa yang anda dapat?</h3>
-                  <ul>
-                    <?php foreach($item as $i): ?>
-                    <li><?= $i['item'] ?></li>
-                    <?php endforeach; ?>
-                  </ul>
-                  <div class="home-btn mt-5">
-                      <a href="#contact" class="btn btn-primary shadow-none mb-3">Order now</a>
-                      <a href="/#paket" class="btn btn-secondary shadow-none mb-3">Kembali</a>
-                  </div>
-              </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="home-content" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="text-home-bold fw-bold text-dark mt-1" style="text-align: justify;">
+                            <span class="text-primary"><?= $paket['nama_paket'] ?></span>
+                        </h1>
+                        <p class="badge fs-6 fw-normal bg-primary-light text-primary"><?= 'Rp ' . number_format($paket['harga'], 0, ".", ","); ?></p>
+                        <h4 class="text-home-reguler fw-normal text-secondary">
+                            <?= $paket['deskripsi'] ?>
+                        </h4>
+                        <h3 id="lorem-ipsum-dolor-sit-amet-1">Apa yang anda dapat?</h3>
+                        <ul>
+                            <?php foreach($item as $i): ?>
+                            <li><?= $i['item'] ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <div class="home-btn mt-5">
+                            <a href="#contact" class="btn btn-primary shadow-none mb-3">Order now</a>
+                            <a href="/#paket" class="btn btn-secondary shadow-none mb-3">Kembali</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?= $paket['image'] ? (base_url('uploaded/paket/') . $paket['image']) : base_url('assets/dummy.jpg') ?>" class="w-100">
+                </div>
             </div>
         </div>
     </section>
