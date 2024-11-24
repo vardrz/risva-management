@@ -92,15 +92,19 @@
                           <div class="col-md-6">
                             <div class="w-100 d-flex flex-row mt-3">
                               <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=ffffff" width="20" height="20">
-                              <span style="margin-left: 10px;" class="text-white"><?= $profil['whatsapp']; ?></span>
+                              <div class="d-flex flex-column align-items-start" style="margin-left: 10px;">
+                                  <a href="https://wa.me/<?= $profil['whatsapp']; ?>" target="_blank" class="text-white"><?= $profil['whatsapp']; ?></a>
+                                  <span class="text-white" style="padding-left: 50;">Scan QR code dibawah ini!</span>
+                                  <img src="<?= base_url('assets/wa-qr.png') ?>" class="w-25">
+                              </div>
                             </div>
-                            <div class="w-100 d-flex flex-row mt-3">
+                            <div class="w-100 d-flex flex-row mt-4">
                               <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=ffffff" width="20" height="20">
-                              <span style="margin-left: 10px;" class="text-white"><?= $profil['instagram']; ?></span>
+                              <a href="https://instagram.com/<?= str_replace("@", "", $profil['instagram']); ?>" target="_blank" style="margin-left: 10px;" class="text-white"><?= $profil['instagram']; ?></a>
                             </div>
                             <div class="w-100 d-flex flex-row mt-3">
                               <img src="https://img.icons8.com/?size=100&id=53430&format=png&color=ffffff" width="20" height="20">
-                              <span style="margin-left: 10px; text-align: start;" class="text-white"><?= $profil['alamat']; ?></span>
+                              <a href="https://maps.app.goo.gl/RM68n9AB2jkM8oDw5" target="_blank" style="margin-left: 10px; text-align: start;" class="text-white"><?= $profil['alamat']; ?></a>
                             </div>
                           </div>
                           <div class="col-md-6">
@@ -147,8 +151,8 @@
                             <div class="footer-content">
                                 <span>Contact</span>
                                 <ul class="footer-link mt-3 list-unstyled">
-                                    <li><a href="#" class="py-1 d-block">Batang - Indonesia</a></li>
-                                    <li><a href="#" class="py-1 d-block"><?= $profil['whatsapp'] ?></a></li>
+                                    <li><a href="https://maps.app.goo.gl/RM68n9AB2jkM8oDw5" target="_blank" class="py-1 d-block">Batang - Indonesia</a></li>
+                                    <li><a href="https://wa.me/<?= $profil['whatsapp']; ?>" target="_blank" class="py-1 d-block"><?= $profil['whatsapp'] ?></a></li>
                                 </ul>
                             </div>
                         </div>
