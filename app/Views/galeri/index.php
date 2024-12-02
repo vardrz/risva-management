@@ -111,7 +111,7 @@
                             <th scope="col" class="text-center px-2 py-3 font-medium whitespace-nowrap">
                                 <?= $key + 1; ?>
                             </th>
-                            <th scope="row" class="text-center px-6 py-4 font-medium whitespace-nowrap">
+                            <th scope="row" class="text-center px-6 py-4 font-medium whitespace-wrap">
                                 <?= $value['judul']; ?><br>
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium whitespace-wrap">
