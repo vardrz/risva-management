@@ -1,20 +1,24 @@
 <?php
 
+//namespace dan import model
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ProfileModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
+//controller halaman paket
 class ProfileController extends BaseController
 {
     protected $profileModel;
 
+    //menginisialisasi model galeri 
     public function __construct()
     {
         $this->profileModel = new ProfileModel();
     }
 
+    //menampilkan semua data profil
     public function index()
     {
         $data = [
@@ -22,9 +26,11 @@ class ProfileController extends BaseController
             'data' => $this->profileModel->get()[0],
         ];
 
+        //mengirim data ke view
         return view('profile/index', $data);
     }
 
+    //save data
     public function save()
     {
         if (!$this->validate([
@@ -81,6 +87,7 @@ class ProfileController extends BaseController
         return redirect()->to('/admin/profile');
     }
 
+    //upload & edit logo
     public function logo()
     {
         $rules = [

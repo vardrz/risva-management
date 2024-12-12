@@ -8,7 +8,8 @@
         <p></p>
         <div class="text-sm place-self-end">
             <ul class="flex">
-                <li class="text-gray-600"><a href="<?= base_url('admin/home'); ?>" class="hover:font-semibold">Dashboard</a></li>
+                <li class="text-gray-600"><a href="<?= base_url('admin/home'); ?>" 
+                class="hover:font-semibold">Dashboard</a></li>
                 <li><span class="mx-2 text-gray-400">/</span></li>
                 <li class="font-medium"><span>Profil</span></li>
             </ul>
@@ -160,7 +161,7 @@
 
 <?= $this->endSection() ?>
 
-
+<--menampilkan thumbnail video-->
 <?= $this->section('script') ?>
 <script>
     var loadFile = function(event) {

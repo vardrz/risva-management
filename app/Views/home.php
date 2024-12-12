@@ -87,12 +87,12 @@
 
     <!-- Services Section Open -->
     <section class="services text-center" id="paket">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
             <span class="text-primary">Paket</span>
             <h2 class="fw-bold text-dark mt-3">Paket Kami</h2>
             <div class="row">
               <?php foreach($paket as $p): ?>
-                <div class="col-sm-4 content mt-5">
+                <div class="col-sm-4 content mt-5" data-aos="fade-up" data-aos-duration="1000">
                     <img src="<?= $p['image'] ? (base_url('uploaded/paket/') . $p['image']) : base_url('assets/dummy.jpg') ?>" class="img-fluid w-75" alt="<?= "Foto Paket " . $p['nama_paket'] ?>">
                     <h3 class="services-title text-dark mt-4"><?= $p['nama_paket'] ?></h3>
                     <h5 class="services-title text-dark mt-2"><?= 'Rp ' . number_format($p['harga'], 0, ".", ","); ?></h5>
@@ -104,27 +104,32 @@
     </section>
     <!-- Services Section Close -->
 
-    <!-- Agreement Section Open -->
-    <section class="menu" style="margin-top: 200px;" id="agreement">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="fw-bold text-dark text-center">Agreement</h2>
-            <div class="text-primary mt-3 text-center">(Dapat dipahami terlebih dahulu, untuk Client maupun Vendor)</div>
-
-            <div class="w-100 d-inline-flex justify-content-center mt-3">
-                <ol>
-                    <li>Untuk keep tanggal, client dapat membayarkan DP dengan minimal 25% dari harga yang tertera dan telah disepakati.</li>
-                    <li>Konsultasi oleh Risva Management akan dilakukan setelah DP diterima.</li>
-                    <li>DP yang telah masuk, akan hangus apabila terjadi pembatalan satu pihak oleh client dan berlaku sebaliknya.</li>
-                    <li>Apabila jarak tempuh lebih dari 15 km, maka akan di kenali biaya tambahan.</li>
-                </ol>
+    <!-- About Section Open -->
+    <!-- <section class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                  <div class="gallery-img mt-3" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?= base_url('uploaded/') . $profil['logo'] ?>" class="w-75" alt="">
+                  </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="about-content" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="text-primary">About</span>
+                        <h2 class="fw-bold text-dark mt-3">Risva Management</h2>
+                        <p class="text-secondary mt-3">
+                          <?= $profil['deskripsi'] ?>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- Agreement Section Close -->
+    </section> -->
+    <!-- About Section Close -->
 
     <!-- Menu Section Open -->
     <section class="menu" style="margin-top: 200px;" id="gallery">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
             <h2 class="fw-bold text-dark text-center mt-3">Gallery</h2>
             <h4 class="text-dark text-center mt-5">Gallery Foto</h4>
             <swiper-container class="mySwiper" pagination="true" navigation="true" pagination-clickable="true" space-between="30" slides-per-view="3">

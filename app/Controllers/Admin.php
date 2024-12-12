@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AdminModel;
 
+//deklarasi class
 class Admin extends BaseController
 {
     protected $adminModel;
@@ -12,17 +13,17 @@ class Admin extends BaseController
     {
         $this->adminModel = new AdminModel();
     }
-
+    //method index 
     public function index()
     {
         return view('admin/home');
     }
-
+    //method login   
     public function login()
     {
         return view('admin/login');
     }
-
+    //Method untuk memproses autentikasi 
     public function auth()
     {
         if (!$this->validate([
@@ -65,7 +66,8 @@ class Admin extends BaseController
             return redirect()->to('/admin/login');
         }
     }
-
+    
+    //method login
     public function logout()
     {
         session()->destroy();

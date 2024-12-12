@@ -1,11 +1,12 @@
 <?php
-
+//namespace dan import model dari galeri dll
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ItemPaketModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
+//controller halaman item paket
 class ItemPaketController extends BaseController
 {
     protected $itemPaketModel;
@@ -15,6 +16,7 @@ class ItemPaketController extends BaseController
         $this->itemPaketModel = new ItemPaketModel();
     }
 
+    //metode save paket
     public function save()
     {
         if (!$this->validate([
@@ -44,6 +46,7 @@ class ItemPaketController extends BaseController
         return redirect()->to('/admin/paket');
     }
 
+    //memperbarui data item paket
     public function update($id)
     {
         if (!$this->validate([
@@ -72,6 +75,7 @@ class ItemPaketController extends BaseController
         return redirect()->to('/admin/paket');
     }
 
+    //menghapus data item berdasarkan id
     public function delete($id)
     {
         $this->itemPaketModel->delete($id);

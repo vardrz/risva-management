@@ -1,5 +1,6 @@
 <?php
 
+//namespace dan import model 
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
@@ -7,6 +8,7 @@ use App\Models\ItemPaketModel;
 use App\Models\PaketModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
+//controller halaman paket
 class PaketController extends BaseController
 {
     protected $paketModel;
@@ -18,6 +20,7 @@ class PaketController extends BaseController
         $this->itemPaketModel   = new ItemPaketModel();
     }
 
+    //Menampilkan halaman utama dengan daftar paket.
     public function index()
     {
         $data = [
@@ -30,6 +33,7 @@ class PaketController extends BaseController
         return view('paket/index', $data);
     }
 
+    //metode save (Menambahkan paket baru ke database)
     public function save()
     {
         if (!$this->validate([
@@ -67,6 +71,7 @@ class PaketController extends BaseController
         return redirect()->to('/admin/paket');
     }
 
+    //metode update
     public function update($id)
     {
         if (!$this->validate([
@@ -104,7 +109,7 @@ class PaketController extends BaseController
         return redirect()->to('/admin/paket');
     }
 
-
+    //Mengunggah dan menyimpan gambar untuk paket
     public function image()
     {
         $rules = [
@@ -138,6 +143,7 @@ class PaketController extends BaseController
         return redirect()->to('/admin/paket');
     }
 
+    //menghapus data
     public function delete($id)
     {
         $this->paketModel->delete($id);

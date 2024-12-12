@@ -1,20 +1,24 @@
 <?php
 
+//namespace dan import model
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\TestiModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
+//controller halaman testimoni
 class TestiController extends BaseController
 {
     protected $testiModel;
 
+     //menginisialisasi model galeri 
     public function __construct()
     {
         $this->testiModel = new TestiModel();
     }
 
+    //menampilkan semua data testimoni
     public function index()
     {
         $data = [
@@ -25,6 +29,7 @@ class TestiController extends BaseController
         return view('testi/index', $data);
     }
 
+    //tambah testimoni
     public function add()
     {
         return view('testi/add', [
@@ -32,6 +37,7 @@ class TestiController extends BaseController
         ]);
     }
 
+    //simpan data
     public function save()
     {
         if (!$this->validate([
@@ -77,15 +83,17 @@ class TestiController extends BaseController
         return redirect()->to('/admin/testi');
     }
 
+    //edit data
     public function edit($id)
     {
         $data = $this->testiModel->getById($id)[0];
         return view('testi/edit', [
-            "title" => "Tambah Testimoni",
+            "title" => "Edit Testimoni",
             "data" => $data
         ]);
     }
 
+    //update data
     public function update($id)
     {
         $rules = [
@@ -158,6 +166,7 @@ class TestiController extends BaseController
         return redirect()->to('/admin/testi');
     }
 
+    //hapus data
     public function delete($id)
     {
         $image = $this->testiModel->getById($id)[0]['image'];
